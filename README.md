@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mjohnsullivan/node-klv.png)](http://travis-ci.org/mjohnsullivan/node-klv)
+
 KLV Parser for Node
 ===================
 
@@ -40,7 +42,7 @@ Incoming streams can have multiple KLVs; the parser will emit events as it encou
 License (MIT)
 -------------
 
-Copyright 2012 Arts Alliance Media
+Copyright 2013 Arts Alliance Media
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
