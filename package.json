@@ -1,0 +1,25 @@
+{ "name": "node-klv"
+    , "description": "KLV (Key Length Value) decoder"
+    , "author": "Matt Sullivan <matt.sullivan@artsalliancemedia.com>"
+    , "version": "0.0.1"
+    , "main": "lib/klv.js"
+    , "scripts": 
+        { "test": "mocha"
+    }
+    , "repository" :
+        { "type" : "git"
+        , "url" : "https://github.com/artsalliancemedia/node-klv"
+    }
+    , "bugs" : { "url" : "https://github.com/artsalliancemedia/node-klv/issues"
+    }
+    , "devDependencies":
+        { "mocha": "1.x"
+    }
+    , "engines" : {
+        "node": ">=0.4"
+    }
+    , "license" :
+        { "type": "MIT"
+        , "url": "https://raw.github.com/artsalliancemedia/node-klv/master/LICENSE"
+    }
+}
