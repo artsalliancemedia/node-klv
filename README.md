@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mjohnsullivan/node-klv.png)](http://travis-ci.org/mjohnsullivan/node-klv)
+[![Build Status](https://travis-ci.org/artsalliancemedia/node-klv.png)](http://travis-ci.org/artsalliancemedia/node-klv)
 
 KLV Parser for Node
 ===================
