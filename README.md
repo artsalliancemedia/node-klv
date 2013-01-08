@@ -1,14 +1,14 @@
 [![Build Status](https://travis-ci.org/artsalliancemedia/node-klv.png)](http://travis-ci.org/artsalliancemedia/node-klv)
 
-KLV Parser for Node
+KLV in Node
 ===================
 
-A Node.js streaming parser for KLV (Key Length Value) encoded data.
+A Node.js streaming parser for KLV (Key Length Value) encoded data. KLV encoding is commonly used in the motion picture industry.
 
-KLV encoding is commonly used in the motion picture industry.
+http://en.wikipedia.org/wiki/KLV
 
-Usage
------
+KLV Streams
+-----------
 
 ```javascript
 var fs = require('fs'),
@@ -38,6 +38,26 @@ fileStream.pipe(klvStream);
 ```
 
 Incoming streams can have multiple KLVs; the parser will emit events as it encounters each one.
+
+Creating KLVs
+-------------
+
+Data can be encoded into a KLV; just supply the key and value as buffers and use:
+
+```javascript
+
+var klv = require('klv');
+
+var myKLV = klv.encodeKLV(myKeyBuffer, myValueBuffer);
+```
+
+An optional BER length can be provided as a final parameter if you want to explicitly set the length in bytes of the BER length:
+
+```javascript
+
+klv.encodeKLV(myKeyBuffer, myValueBuffer, 4);
+
+```
 
 License (MIT)
 -------------
