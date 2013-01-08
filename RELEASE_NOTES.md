@@ -1,6 +1,13 @@
 Release Notes
 =============
 
+0.0.3
+-----
+
+* Added a BER encoder.
+
+* Added a new function, encodeKLV, to encode a key and value buffer into a KLV.
+
 0.0.2
 -----
 

@@ -1,7 +1,7 @@
 { "name": "node-klv"
-    , "description": "KLV (Key Length Value) decoder"
+    , "description": "KLV (Key Length Value) encoder and streaming decoder"
     , "author": "Matt Sullivan <matt.sullivan@artsalliancemedia.com>"
-    , "version": "0.0.2"
+    , "version": "0.0.3"
     , "main": "lib/klv.js"
     , "scripts": 
         { "test": "mocha"
@@ -16,7 +16,7 @@
         { "mocha": "1.x"
     }
     , "engines" : {
-        "node": ">=0.6"
+        "node": ">=0.4"
     }
     , "license" :
         { "type": "MIT"
