@@ -1,6 +1,13 @@
 Release Notes
 =============
 
+0.0.4
+-----
+
+* Removed the 'length' event; it didn't serve any purpose.
+
+* Removed passing through the data (re-emitting it) so the stream can be used duplex.
+
 0.0.3
 -----
 
