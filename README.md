@@ -3,6 +3,8 @@
 KLV in Node
 ===================
 
+**The NPM package has been renamed from node-klv to klv! Make sure to update your dependencies.**
+
 A Node.js streaming parser for KLV (Key Length Value) encoded data. KLV encoding is commonly used in the motion picture industry.
 
 http://en.wikipedia.org/wiki/KLV
