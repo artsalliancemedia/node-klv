@@ -1,4 +1,4 @@
-{ "name": "node-klv"
+{ "name": "klv"
     , "description": "KLV (Key Length Value) encoder and streaming decoder"
     , "author": "Matt Sullivan <matt.sullivan@artsalliancemedia.com>"
     , "version": "0.0.4"
