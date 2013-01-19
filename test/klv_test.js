@@ -136,16 +136,7 @@ describe('klv:', function() {
 		   		else
 		   			assert.deepEqual(key, testKLV2.slice(0, 16));
 		   	});
-
-		   	klvStream.on('length', function(length) {
-		   		assert(length);
-		   		assert.equal(typeof length, 'number');
-		   		if (iterationCounter === 1)
-		   			assert.equal(length, 5);
-		   		else
-		   			assert.equal(length, 7);
-		   	});
-
+	
 		   	klvStream.on('value', function(value) {
 		   		assert(value);
 		   		assert.equal(typeof value, 'object');
