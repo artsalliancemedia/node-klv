@@ -70,6 +70,8 @@ describe('klv:', function() {
                   0x83, 0x00, 0x00, 0x05,
                   0x05, 0x04, 0x03, 0x02, 0x01])
 
+			var valueEventReceived = false;
+
 			// Create a simple read stream for the testKLV bytes
 			var byteStream = new stream.Stream();
 			byteStream.readable = true;
@@ -83,20 +85,16 @@ describe('klv:', function() {
 		   		assert.deepEqual(key, testKLV.slice(0, 16));
 		   	});
 
-		   	klvStream.on('length', function(length) {
-		   		assert(length);
-		   		assert.equal(typeof length, 'number');
-		   		assert.equal(length, 5);
-		   	});
-
 		   	klvStream.on('value', function(value) {
 		   		assert(value);
 		   		assert.equal(typeof value, 'object');
 		   		assert.equal(value.length, 5);
 		   		assert.deepEqual(value, testKLV.slice(20));
+		   		valueEventReceived = true;
 		   	});
 
 		   	klvStream.on('end', function() {
+		   		assert(valueEventReceived);
 		   		done();
 		   	});
 
@@ -117,7 +115,6 @@ describe('klv:', function() {
                   0xFF, 0x3D, 0x99, 0x23, 0x4D, 0x01, 0x02, 0x03, 0x04, 0xAD, 0xAC, 0xAB, 0xAA, 0x00, 0x00, 0x00,
                   0x82, 0x00, 0x07,
                   0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07]);
-			var testKLVs = Buffer.concat([testKLV1, testKLV2]);
 
 			// Create a simple read stream for the testKLV bytes
 			var byteStream = new stream.Stream();
@@ -156,8 +153,10 @@ describe('klv:', function() {
 		   		done();
 		   	});
 
-		   	// Emit the KLV 
-		   	byteStream.emit('data', testKLVs);
+		   	// Emit the KLVs in multiple chopped up data events
+		   	byteStream.emit('data', testKLV1.slice(0,10));
+		   	byteStream.emit('data', Buffer.concat([testKLV1.slice(10), testKLV2.slice(0, 4)]));
+		   	byteStream.emit('data', testKLV2.slice(4));
 		   	byteStream.emit('end');
 		});
 	});
