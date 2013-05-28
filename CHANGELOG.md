@@ -1,6 +1,13 @@
 Release Notes
 =============
 
+0.0.7
+-----
+
+* Made passing through the data (re-emitting it) an option so the KLV stream can be used in duplex or as a through pipe
+
+* The value parameter in encodeKLV is now optional for KLVs with no values
+
 0.0.6
 -----
 
