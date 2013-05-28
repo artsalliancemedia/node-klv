@@ -41,18 +41,14 @@ Creating KLVs
 Data can be encoded into a KLV; just supply the key and value as buffers and use:
 
 ```javascript
-
 var klv = require('klv');
-
 var myKLV = klv.encodeKLV(myKeyBuffer, myValueBuffer);
 ```
 
-An optional BER length can be provided as a final parameter if you want to explicitly set the length in bytes of the BER length:
+An optional BER length can be provided as a final parameter if you want to explicitly set the length in bytes:
 
 ```javascript
-
 klv.encodeKLV(myKeyBuffer, myValueBuffer, 4);
-
 ```
 
 License (MIT)
