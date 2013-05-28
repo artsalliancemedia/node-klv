@@ -230,7 +230,7 @@ describe('klv:', function() {
     describe('setEncoding', function() {
         it('should output KLV values in the proper encoded string format', function() {
             var testKey = new Buffer([0x03, 0x2E, 0x5F, 0xAB, 0x08, 0x12, 0x2F, 0x0C, 0xEE, 0x33, 0x00, 0x01, 0x02, 0x45, 0x6D, 0xDD]);
-            var testValue = new Buffer('these are little endian encoded Unicode characters', 'utf16le');
+            var testValue = new Buffer('these are little endian encoded Unicode characters', 'ucs2');
             var encodedKLV = klv.encodeKLV(testKey, testValue);
             assert.deepEqual(encodedKLV, Buffer.concat([testKey, new Buffer([0x64]), testValue]));
             var encodedKLV = klv.encodeKLV(testKey, testValue, 4);
@@ -238,7 +238,7 @@ describe('klv:', function() {
 
             // test outputting
             var klvStream = klv.createStream();
-            klvStream.setEncoding('utf16le');
+            klvStream.setEncoding('ucs2');
             klvStream.on('value', function(value) {
                 assert.equal(value.length, 50);
                 assert.equal(value, 'these are little endian encoded Unicode characters');
