@@ -33,7 +33,6 @@ describe('klv:', function() {
             assert.equal(klv.decodeBER(new Buffer([0x83, 0x01, 0x00, 0x0A])).value, 65546);
             assert.equal(klv.decodeBER(new Buffer([0x83, 0x01, 0x01, 0x00])).value, 65536 + 256);
             assert.equal(klv.decodeBER(new Buffer([0x83, 0x01, 0x01, 0x01])).value, 65536 + 257);
-
         });
     });
 
